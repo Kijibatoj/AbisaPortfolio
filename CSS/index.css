@@ -1,0 +1,734 @@
+*{
+ margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: #f9f9f9;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+/*==========================================Menu Header===============================================================*/
+.MenuPrincipal{
+  height: 100px;
+  background: linear-gradient(to right, #a166ee1a, #4c08ca2c);
+    display: flex;
+    justify-content: space-between
+}
+.icono {
+  display: none;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+}
+
+a:hover{
+  color: #7700ff;
+}
+
+.navbar{
+  width: 100%;
+  height: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .logo a{
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: none;
+
+}
+
+.navbar .links{
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar .toggle_btn{
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+
+}
+
+.action-btn{
+  background-color: #852bfc;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: scale 0.2 ease;
+}
+
+.action-btn:hover{
+  scale: 1.05;
+  color: #fff;
+}
+.action-btn:active{
+  scale: 0.95;
+}
+
+.drop_menu{
+  display: none;
+  position: absolute;
+  right: 2rem;
+  top: 60px;
+  height: 0;
+  width: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.drop_menu.open{
+  height: 170px;
+}
+
+.drop_menu li{
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.drop_menu .action-btn{
+  width: 100%;
+ display: flex;
+ justify-content: center;
+}
+
+
+
+
+/*============================================Responsive navBar xd================================ */
+@media(max-width: 992px){
+ .navbar .links,
+ .navbar .action-btn{
+  display: none;
+ }
+ .navbar .toggle_btn{
+  display: block;
+ }
+ .drop_menu{
+  display: block;
+ }
+}
+@media(max-width: 576px){
+ .drop_menu{
+  left: 2rem;
+  width: unset;
+ }
+}
+
+
+
+
+
+
+.MenuPrincipal .logo {
+  height: 100%;
+  margin-left: 20px;
+}
+
+.MenuPrincipal .logo img {
+  object-fit: cover;
+  height: inherit;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+/* =======================================Texto de bienvenida==============================================*/
+.TextWelcome{
+  font-size: 5em;
+  letter-spacing: 10px;
+  font-family: monospace;
+  border-right: 5px solid;
+  width: 100%;
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  display: flex;
+  animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+
+
+.typewriter p {
+  font-size: 3em;
+  overflow: hidden;
+  white-space: nowrap; 
+  margin: 0 auto; 
+  letter-spacing: .15em; 
+  border-right: .15em solid rgb(118, 71, 247); 
+}
+
+.typing {
+  animation: typing 2.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: rgb(118, 71, 247); }
+}
+/* ===================================Imagen Parallax========================================== */
+
+.parallax-container {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.parallax {
+    background-image: url("../IMG/Parallax.jpg"); 
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.parallax::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); 
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    padding: 100px 0;
+    margin-top: 100px;
+}
+
+.content {
+    height: 1200px; 
+}
+
+
+/*NOTE url("../IMG/Parallax.jpg") */
+
+
+/* ===================================Imagen Parallax FIN========================================== */
+
+/* ===================================Sobre mi cont========================================== */
+
+.wrapper {
+  height: 560px;
+  width: 65%;
+  margin: 15px;
+  border-radius: 7px 7px 7px 7px;
+  -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+
+}
+
+.wrapper2 {
+  height: 560px;
+  width: 65%;
+  margin: 15px;
+  border-radius: 7px 7px 7px 7px;
+  -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  float: right;
+}
+
+.product-img {
+  float: left;
+  height: 480px;
+  width: 50%;
+}
+
+.product-img img {
+  border-radius: 7px 0 0 7px;
+  height: 525px;
+  width: 85%;
+}
+
+.product-info {
+  float: right;
+  height: 480px;
+  width: 50%;
+  border-radius: 0 7px 10px 7px;
+  background-color: #ffffff;
+}
+
+.product-text {
+  height: 680px;
+  width: 90%;
+}
+
+.product-text h1 {
+  margin: 0 0 0 38px;
+  padding-top: 52px;
+  font-size: 34px;
+  color: #474747;
+}
+
+.product-text h2 {
+  margin: 0 0 47px 38px;
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #505050;
+  letter-spacing: 0.2em;
+}
+
+.product-text p {
+  min-height: 625px;
+  margin: 0 0 0 38px;
+  color: #000000;
+  line-height: 1.7em;
+  font-size: 24px;
+  font-weight: lighter;
+  overflow: hidden;
+  display: flex;
+}
+
+
+/*====================Skilss contenct=====================*/
+.containerSkill{
+  height: 50vh;
+  padding: 0 8%;
+
+}
+.containerSkill h1{
+  text-align: center;
+  padding-top: 10%;
+  margin-bottom: 60px;
+  font-weight: 600;
+  position: relative;
+}
+.containerSkill h1::after{
+  content: '';
+  background: #6d22f7;
+  width: 100px;
+  height: 5px;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+
+.rowi{
+  display: grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)) ;
+  grid-gap: 30px;
+}
+
+.service{
+  text-align: center;
+  padding: 35px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  background: transparent;
+  transition: transform 0.5s, background 0.5s ;
+}
+
+.service i{
+  font-size: 60px;
+  margin-bottom: 10px;
+  color: #6d22f7;
+}
+
+.service h2{
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.service:hover{
+  background: #6d22f7;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.service:hover i{
+  color: #fff;
+}
+
+
+/* ====================================Proyectos container====================================== */
+
+.TitleProyect{
+  text-align: center;
+  margin-top: 1px;
+  font-size: 2.5em;
+  font-weight: 500;
+  color: #474747;
+}
+
+.cards{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+  padding: 20px;
+  grid-gap: 40px;
+ 
+ }
+ 
+ .card{
+ background-color: #e0cef5;
+ border-radius: 20px;
+ box-shadow: 0 0 30px rgba(0, 0, 0,0.18 );
+ }
+ .container{
+   position: relative;
+   clip-path: polygon(0 0,100% 0,100% 85%, 0 100%);
+ 
+ }
+ 
+ .imagecard{
+   width: 100%;
+   display: block;
+   border-radius: 20px 20px 0 0;
+   height: 400px;
+ }
+ 
+ .container::after{
+   content: "";
+   height: 100%;
+   width: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   border-radius:  20px 20px 0 0;
+   opacity: 0.4;
+ 
+ }
+ 
+ .card1>.container::after{
+   background-image: linear-gradient(
+     135deg,
+     #0100ec,
+     #fb36f4
+   );
+ }
+ .card2>.container::after{
+   background-image: linear-gradient(
+     135deg,
+     #8d8dee,
+     #fb36f4
+   );
+ }
+ .card3>.container::after{
+
+   background-image: linear-gradient(
+     135deg,
+     #f87998,
+     #fb36f4
+   );
+ }
+
+ .details{
+   padding: 20px 10px;
+   overflow: hidden;
+ }
+ @keyframes colorChange {
+  0% {
+    color: #ff6347; 
+    transform: scale(1); 
+  }
+  50% {
+    color: #4169e1; 
+    transform: scale(1); 
+  }
+  100% {
+    color: #ff6347; 
+    transform: scale(1); 
+  }
+}
+ .details>h3{
+   color: #000000;
+   font-weight: 600;
+   font-size: 30px;
+   margin: 10px 0 15px 0;
+   animation: colorChange 5s infinite alternate;
+ }
+ 
+ .details>p{
+   color: #000000;
+   font-size: 15px;
+   line-height: 30px;
+   font-weight: 400;
+ }
+
+ a.button {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #6a0dad; 
+  color: #fff; 
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+a.button:hover {
+  background-color: #8e15e7;
+}
+
+
+a.button:hover {
+  animation: pulse 0.5s ease infinite alternate; 
+}
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(1); 
+  }
+  100% {
+    transform: scale(1.1); 
+  }
+}
+
+
+
+
+
+
+ /*===============================Contacto==============================================*/
+
+
+
+
+
+.CopyLink{
+  padding: 18px 26px;
+  font-size: 16px;
+  background-color: transparent;
+  border: 1px solid #cac5d1;
+  color: #d4bdf1;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+.CopyLink:hover{
+  background-color: #7700ff;
+    color: #fff;
+}
+
+
+
+
+
+/*==============================Responsive======================================*/
+
+@media(max-width:1450px){
+  .content {
+    height: 1500px; 
+}
+  .wrapper {
+    height: 590px;
+    width: 85%;
+    margin: 15px;
+    border-radius: 7px 7px 7px 7px;
+    -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  
+  }
+  
+  .wrapper2 {
+    height: 730px;
+    width: 65%;
+    margin: 15px;
+    border-radius: 7px 7px 7px 7px;
+    -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+    float: right;
+  }
+  
+  
+}
+
+
+
+
+@media (max-width: 1250px) {
+
+  /*======================Parallax Responsive======================*/
+  .parallax-container {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.parallax {
+    background-image: url("../IMG/Parallax.jpg"); 
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.parallax::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); 
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    padding: 50px 0;
+    margin-top: 150px;
+}
+
+.content {
+    height: 750px; 
+}
+
+
+/*========================Texto Bienvenida Responsive================================*/
+.TextWelcome{
+  font-size:20px;
+  font-family: monospace;
+  border-right: 5px solid;
+  width: 100%;
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  display: flex;
+  animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+.CopyLink{
+  padding: 8px 8px;
+  font-size: 10px;
+  background-color: transparent;
+  border: 1px solid #cac5d1;
+  color: #d4bdf1;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+.CopyLink:hover{
+  background-color: #7700ff;
+    color: #fff;
+}
+
+
+.typewriter p {
+  font-size: 12px;
+  font-weight: 600;
+  overflow: hidden;
+  white-space: nowrap; 
+  margin: 0 auto; 
+  letter-spacing: .15em; 
+  border-right: .15em solid rgb(118, 71, 247); 
+}
+
+.typing {
+  animation: typing 2.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: rgb(118, 71, 247); }
+}
+
+
+
+/*===========================Cuadros Texto responsive================================*/
+
+.wrapper {
+  width: 95%;
+
+}
+
+.wrapper2 {
+  height: 1000px;
+  width: 95%;
+}
+
+.product-img {
+  width: 100%;
+}
+
+.product-img img {
+  border-radius: 7px 7px 0 0;
+  width: 100%;
+}
+
+.product-info {
+  width: 100%;
+  border-radius: 0 0 7px 7px;
+  background-color: #ffffff;
+  margin-top: none; 
+}
+.product-text{
+  height: 412px;
+}
+.product-text p{
+  font-size: 12px;
+  height: 412px;
+  margin-top: 0;
+}
+
+
+/*============================CARTAS RESPONSIVE======================================*/
+
+.cards{
+  margin-top: 2cm;
+}
+
+
+}
